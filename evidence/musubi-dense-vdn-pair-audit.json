@@ -1,0 +1,10 @@
+{
+  "first500_same_image_order": true,
+  "first500_same_noise_levels": true,
+  "first500_same_LR": true,
+  "initial_FP32_LoRA_tensors_equal": true,
+  "equal_initial_A_matrices": 200,
+  "initial_A_matrices": 200,
+  "all_initial_B_zero": true,
+  "scope": "Initial FP32 tensors, image order, noise levels and learning rate"
+}

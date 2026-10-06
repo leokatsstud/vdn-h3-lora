@@ -1,0 +1,2 @@
+# Preserve audited source bytes, including checkpoint code fingerprints.
+* -text

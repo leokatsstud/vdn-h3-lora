@@ -1,0 +1,268 @@
+{
+  "E00": {
+    "variants": [
+      "legacy_rank64"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "validate_style_vdn.py"
+    ],
+    "settings": {
+      "rank": 64,
+      "alpha": 64
+    }
+  },
+  "E01": {
+    "variants": [
+      "video_rank32"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py"
+    ],
+    "settings": {
+      "phase": "videos",
+      "steps": 100,
+      "rank": 32
+    }
+  },
+  "E02": {
+    "variants": [
+      "video_rank32",
+      "video_rank32_fast"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "validate_style_vdn.py"
+    ],
+    "settings": {
+      "resume": true,
+      "target_step": 181
+    }
+  },
+  "E03": {
+    "variants": [
+      "checkpoint_benchmark"
+    ],
+    "entrypoints": [
+      "benchmark_r32_runtime.py",
+      "benchmark_r32_fit.py"
+    ],
+    "settings": {
+      "checkpoint_step": 100,
+      "optimizer_updates": 0
+    }
+  },
+  "E04": {
+    "variants": [
+      "frames_balanced",
+      "frames"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "migrate_frame_epoch.py",
+      "migrate_clean_subset.py"
+    ],
+    "settings": {
+      "steps": [
+        100,
+        2210
+      ],
+      "sampling": "source cycles, then frame epoch migration"
+    },
+    "reused_implementation": [
+      "validate_style_vdn.py",
+      "stylelib/packing.py"
+    ]
+  },
+  "E05": {
+    "variants": [
+      "frames_hour",
+      "frames"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "generate_all_checkpoint_pairs.py"
+    ],
+    "settings": {
+      "fresh": true,
+      "seconds": 3600,
+      "checkpoint_every": 500
+    }
+  },
+  "E06": {
+    "variants": [
+      "frames_hour",
+      "frames"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "rearm_training_window.py"
+    ],
+    "settings": {
+      "resume_from": 5037,
+      "target_step": 10000,
+      "checkpoint_every": 2500
+    },
+    "upstream_inference": [
+      "https://github.com/OpenVDN/vdn-minimax-h3/blob/2a054b146d49c70ae89765c6f9f9593617b7e54d/src/inference/utils/assemble.py",
+      "https://github.com/OpenVDN/vdn-minimax-h3/blob/2a054b146d49c70ae89765c6f9f9593617b7e54d/src/inference/render.py"
+    ],
+    "adapter_implementation": "stylelib/adapter.py"
+  },
+  "E07": {
+    "variants": [
+      "video_av"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "generate_video_av_check.py"
+    ],
+    "settings": {
+      "init_from_image_step": 5000,
+      "video_steps": 60,
+      "audio": true,
+      "reference_probability_if_eligible": 0.5
+    },
+    "reused_implementation": [
+      "generate_video_av_check.py"
+    ]
+  },
+  "E08": {
+    "variants": [
+      "strength_controls"
+    ],
+    "entrypoints": [
+      "generate_strength_only.py"
+    ],
+    "settings": {
+      "image_steps": [
+        3000,
+        5000
+      ],
+      "strengths": [
+        0.75,
+        0.5,
+        0.2
+      ]
+    }
+  },
+  "E09": {
+    "variants": [
+      "strength_controls"
+    ],
+    "entrypoints": [
+      "generate_controls_only.py"
+    ],
+    "settings": {
+      "image_step": 5000,
+      "strength": 1,
+      "conditions": [
+        "baseline",
+        "long prompt",
+        "compact prompt"
+      ]
+    }
+  },
+  "E10": {
+    "variants": [
+      "image_scopes",
+      "fp8_transfer"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py"
+    ],
+    "settings": {
+      "steps": 2000,
+      "recipes": [
+        "ff_only",
+        "ff_vo",
+        "full_guarded"
+      ]
+    },
+    "upstream_inference": [
+      "https://github.com/OpenVDN/vdn-minimax-h3/blob/2a054b146d49c70ae89765c6f9f9593617b7e54d/src/inference/utils/assemble.py",
+      "https://github.com/OpenVDN/vdn-minimax-h3/blob/2a054b146d49c70ae89765c6f9f9593617b7e54d/src/inference/render.py"
+    ],
+    "adapter_implementation": "stylelib/adapter.py"
+  },
+  "E12": {
+    "variants": [
+      "fp8_transfer"
+    ],
+    "entrypoints": [
+      "train_style_vdn.py",
+      "generate4000_final_five.py",
+      "check_fp8_cuda.py"
+    ],
+    "settings": {
+      "architecture": "dense",
+      "precision": "fp8",
+      "image_step": 4000,
+      "recipe": "full_standard"
+    },
+    "reused_implementation": [
+      "generate4000_final_five.py",
+      "stylelib/adapter.py",
+      "stylelib/fp8_training.py"
+    ]
+  },
+  "E13": {
+    "variants": [
+      "musubi_vdn",
+      "musubi_dense"
+    ],
+    "entrypoints": [
+      "train_images.py",
+      "audit_pair_cpu.py",
+      "generate_dense_transfer_only.py"
+    ],
+    "settings": {
+      "steps": 500,
+      "architectures": [
+        "vdn",
+        "dense"
+      ],
+      "precision": "bf16",
+      "recipe": "musubi_guidance"
+    },
+    "reused_implementation": [
+      "generate_dense_transfer_only.py"
+    ]
+  },
+  "E14": {
+    "variants": [
+      "data_clips"
+    ],
+    "entrypoints": [
+      "build_short_video_dataset.py"
+    ],
+    "settings": {
+      "clip_count": 513,
+      "frame_counts": [
+        39,
+        56,
+        73,
+        90,
+        107,
+        124
+      ]
+    },
+    "reused_implementation": [
+      "build_short_video_dataset.py"
+    ]
+  },
+  "E16": {
+    "variants": [
+      "fp8_transfer"
+    ],
+    "entrypoints": [
+      "generate_generalization_pairs_only.py"
+    ],
+    "settings": {
+      "image_step": 4000,
+      "pairs": 6,
+      "merge_controls": 2,
+      "strength": 1
+    }
+  }
+}

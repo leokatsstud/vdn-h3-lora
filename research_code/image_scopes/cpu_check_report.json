@@ -1,0 +1,14 @@
+{
+  "tests": 39,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "passed": true,
+  "seconds": 5.031605399970431,
+  "torch": "2.13.0+cpu",
+  "threads": 2,
+  "full_vdn_gpu_tested": false,
+  "scope": "tiny CPU tensors; real 2/4-rank Gloo tests only when memory permits; no model weights loaded",
+  "single_process": true,
+  "peak_working_set_mib": 273.92578125
+}

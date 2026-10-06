@@ -1,0 +1,9 @@
+{
+  "gpu_family": "H200",
+  "activation_offload": true,
+  "softmax_backend": "flex",
+  "precision": "bf16_with_upstream_fp32_islands",
+  "microbatch": 1,
+  "gradient_checkpointing": "block; attention/ff inner only for frames>=260",
+  "inner_checkpoint_min_frames": 260
+}

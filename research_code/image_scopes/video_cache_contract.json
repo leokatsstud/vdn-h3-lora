@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "experimental_implementation_contract_not_upstream_config",
+  "experiment": "native_dmd_guidance_anchor_v1",
+  "github_revision": "2a054b146d49c70ae89765c6f9f9593617b7e54d",
+  "hf_revision": "50744d80bde8c1adbc5f37089f125e0e436bf7b0",
+  "checkpoint": "stage-dmd-step-250",
+  "active_frozen_adapters": [
+    "default",
+    "turbo"
+  ],
+  "style": {
+    "name": "style",
+    "rank": 64,
+    "alpha": 64,
+    "blocks": 50,
+    "target_suffixes": [
+      "attn.orig.to_q",
+      "attn.orig.to_k",
+      "attn.orig.to_v",
+      "attn.orig.to_out.0"
+    ],
+    "expected_modules": 200,
+    "expected_parameters": 160563200
+  },
+  "media": {
+    "fps": 24,
+    "canvas_wh": [
+      [
+        1344,
+        768
+      ],
+      [
+        768,
+        1344
+      ]
+    ],
+    "keep_complete_scenes": true,
+    "allow_experimental_short_duration": true,
+    "interpolation": false
+  },
+  "sampling": {
+    "reference_presentation_fraction": 0.15,
+    "audio_supervision": "per_record_clean_synced_only",
+    "microbatch": 1,
+    "gradient_accumulation": 1
+  },
+  "precision": {
+    "compute": "bf16_with_upstream_fp32_islands",
+    "style_master": "fp32",
+    "export": "bf16",
+    "training_fp8": false
+  },
+  "loss": {
+    "noise_sampling": "continuous_shared_u",
+    "video_shift": 12,
+    "audio_shift": 3,
+    "guidance_scale_video": 3,
+    "guidance_scale_audio": 3,
+    "guidance_base_u_min": 0.15,
+    "video_data_weight": 1,
+    "video_preservation_weight": 0.1,
+    "clean_audio_data_weight": 0.1,
+    "audio_preservation_weight": 0.05,
+    "condition_rows_in_loss": false
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "grad_clip": 1,
+    "warmup_updates": 10,
+    "schedule": "constant_after_warmup"
+  },
+  "pilot": {
+    "maximum_updates": 100,
+    "save_updates": [
+      0,
+      20,
+      50,
+      100
+    ],
+    "total_training_budget_seconds": 36000,
+    "full_run_requires_pilot_validation": true
+  },
+  "inference": {
+    "nfe": 8,
+    "video_shift": 12,
+    "audio_shift": 3,
+    "evaluate_precisions": [
+      "bf16",
+      "selected_fp8_runtime"
+    ]
+  },
+  "captioning": {
+    "annotator": "gemini-3.5-flash-lite with video/audio, STATIC 24 fps HIGH",
+    "main_prompt": "dataset_final/VIDEO_DESCRIPTION_PROMPT_EN.txt",
+    "t2va_fields": [
+      "integrated_multimodal_description",
+      "overall_soundscape",
+      "non_diegetic_music"
+    ],
+    "style_trigger": "vstyleh3",
+    "trigger_location": "once immediately after [Shot 1]",
+    "working_character_budget": null,
+    "silent_truncation": false,
+    "cuts": "separately verified frame indices; timestamps supplied by caption_workflow.py",
+    "describe_overall_style": false,
+    "audio_eligibility": "separate reviewed sidecar and manifest flag",
+    "format_control": "per-shot strict JSON schema; deterministic three-field H3 serialization",
+    "length_policy": "check after generation; no model-facing character or word limit; no silent truncation"
+  }
+}

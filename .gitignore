@@ -1,0 +1,27 @@
+# Data/models never belong to this repository.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.env
+.env*
+*private*
+*token*
+*credential*
+*connection_key*
+dataset*/
+cache*/
+weights*/
+runs*/
+.venv/
+.test_deps/
+__pycache__/
+*.pyc
+*.log
+upstream/
+local-artifacts/

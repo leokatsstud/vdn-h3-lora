@@ -1,0 +1,35 @@
+{
+  "source": "archived final events ledgers, 2000 rows per recipe",
+  "all_three_same_frame_sequence": true,
+  "all_three_same_base_u_sequence": true,
+  "recipes": [
+    {
+      "recipe": "ff_only",
+      "committed_updates": 2000,
+      "two_complete_epochs_all780_unique": true,
+      "third_epoch_prefix_unique": 440,
+      "median_update_seconds": 0.6399861349491403,
+      "maximum_lr": 0.0001,
+      "all_loss_and_gradients_finite": true
+    },
+    {
+      "recipe": "ff_vo",
+      "committed_updates": 2000,
+      "two_complete_epochs_all780_unique": true,
+      "third_epoch_prefix_unique": 440,
+      "median_update_seconds": 0.6705589750199579,
+      "maximum_lr": 0.0001,
+      "all_loss_and_gradients_finite": true
+    },
+    {
+      "recipe": "full_guarded",
+      "committed_updates": 2000,
+      "two_complete_epochs_all780_unique": true,
+      "third_epoch_prefix_unique": 440,
+      "median_update_seconds": 0.7053090099943802,
+      "maximum_lr": 0.0001,
+      "all_loss_and_gradients_finite": true
+    }
+  ],
+  "not_a_visual_quality_metric": true
+}

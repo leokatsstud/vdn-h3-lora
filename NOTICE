@@ -1,0 +1,10 @@
+VDN-H3 style LoRA research extensions.
+
+The trainer and stylelib implement style adapters, objectives, packing,
+sampling and checkpoint migration on OpenVDN and pinned Diffusers.
+
+OpenVDN copyright and Apache-2.0 notices are retained under licenses/.
+vendor_audit/before_denoise.py retains its MiniMax/HuggingFace copyright
+and Apache-2.0 header. The model license is separate from the code license.
+
+Original project contributions: Copyright (c) 2026 leokatsstud, MIT License.

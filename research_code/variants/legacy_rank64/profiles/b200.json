@@ -1,0 +1,1 @@
+{"gpu_family":"B200","activation_offload":true,"softmax_backend":"flex","precision":"bf16_with_upstream_fp32_islands","microbatch":1,"gradient_checkpointing":"block_and_attention_ff_regions"}

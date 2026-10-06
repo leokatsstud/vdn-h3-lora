@@ -1,0 +1,89 @@
+{
+  "repository": "https://github.com/leokatsstud/vdn-h3-lora",
+  "assets": [
+    {
+      "file": "media/generalization-20261006/N01_dense4000_to_vdn.mp4",
+      "sha256": "b650038d8249b560fcd9fddde3abba94be3ff6ea426731dc675d54d17d370b7c",
+      "bytes": 4225901,
+      "url": "https://github.com/user-attachments/assets/b3704c42-5b2c-478b-9188-401e70e02389"
+    },
+    {
+      "file": "media/generalization-20261006/N01_direct_vdn4000.mp4",
+      "sha256": "96988d5b4bfaaeaf59a0bd8e587dcd6c95c10fd5c4b3ba065fd7676a007764c2",
+      "bytes": 5228510,
+      "url": "https://github.com/user-attachments/assets/cafce6d6-ebe9-4125-92f2-4e400b208e36"
+    },
+    {
+      "file": "media/generalization-20261006/N02_dense4000_to_vdn.mp4",
+      "sha256": "b74541c73800f6c5e3c167bec9562ed1541ea38527fa958f88fc34477d971460",
+      "bytes": 4083120,
+      "url": "https://github.com/user-attachments/assets/812d0d30-01eb-49da-9982-47f49f6259c5"
+    },
+    {
+      "file": "media/generalization-20261006/N02_direct_vdn4000.mp4",
+      "sha256": "fe4e38d88f7b81311fb91b039947532569ae8fde2fd4835b4a323fe528c3930d",
+      "bytes": 5191735,
+      "url": "https://github.com/user-attachments/assets/eee24f59-0b2d-4063-b5f3-48938ade066a"
+    },
+    {
+      "file": "media/generalization-20261006/N03_dense4000_to_vdn.mp4",
+      "sha256": "92bb597bae9524891f2d544a2a98e15461103db674bfec3cf00d7b6bc81a7a53",
+      "bytes": 5306995,
+      "url": "https://github.com/user-attachments/assets/553a2d5e-1d71-454b-996e-8b011c928e5a"
+    },
+    {
+      "file": "media/generalization-20261006/N03_direct_vdn4000.mp4",
+      "sha256": "6236472b13b4bd1fed50994925870402ec43cf35b9ca36ace9c80a5656ce72c4",
+      "bytes": 7706673,
+      "url": "https://github.com/user-attachments/assets/60c1a21b-9b31-4605-a1cf-45d334610dcd"
+    },
+    {
+      "file": "media/generalization-20261006/N03_dense4000_to_vdn_merged.mp4",
+      "sha256": "9786389b48887a6d6445980e7e7cf68823e10f2d7121d67f068080cac34bdea1",
+      "bytes": 5204235,
+      "url": "https://github.com/user-attachments/assets/44a324f5-053c-45d9-bc44-5aa4299b5445"
+    },
+    {
+      "file": "media/generalization-20261006/N03_direct_vdn4000_merged.mp4",
+      "sha256": "61a09624776124d58ba127072c930010a5c0c55ac45675bc84d07ac926578dbc",
+      "bytes": 7607162,
+      "url": "https://github.com/user-attachments/assets/d8df9ceb-79ff-4e2c-b7e2-103e30fcee6e"
+    },
+    {
+      "file": "media/generalization-20261006/N04_dense4000_to_vdn.mp4",
+      "sha256": "94371078391857fc625f83f2de339ef156ee1b404a182917c6e28ea9b8b16e5c",
+      "bytes": 4138744,
+      "url": "https://github.com/user-attachments/assets/2800fdc4-5d80-4882-bb23-b179545c4768"
+    },
+    {
+      "file": "media/generalization-20261006/N04_direct_vdn4000.mp4",
+      "sha256": "138faccb28e294dff07bb108537f11ef32b86e9cae521a7bbf4c525d1ed7d498",
+      "bytes": 4294000,
+      "url": "https://github.com/user-attachments/assets/d06dd64f-bec1-4557-84b8-98e8c9fbaf8c"
+    },
+    {
+      "file": "media/generalization-20261006/N05_dense4000_to_vdn.mp4",
+      "sha256": "eefa33a9c77dc068d940119aad773c5b2509301c73dce2504d20b31317399d24",
+      "bytes": 4286508,
+      "url": "https://github.com/user-attachments/assets/7c7ee346-471d-46b7-872f-4aac7bb1798c"
+    },
+    {
+      "file": "media/generalization-20261006/N05_direct_vdn4000.mp4",
+      "sha256": "049bf20dd3cfbac05281a39f41f4aa130b676a21caaa4f021e536dba1cba0a76",
+      "bytes": 4962033,
+      "url": "https://github.com/user-attachments/assets/705cb723-c84c-48cf-a818-3ce61897dcc8"
+    },
+    {
+      "file": "media/generalization-20261006/N06_dense4000_to_vdn.mp4",
+      "sha256": "a7f41232713c029fc4bc0321880da9c136ab77d2e63e9e20ca5a7986f6f500cd",
+      "bytes": 6184289,
+      "url": "https://github.com/user-attachments/assets/4707519b-c7f9-44c9-b5f4-4c4eebf4bef9"
+    },
+    {
+      "file": "media/generalization-20261006/N06_direct_vdn4000.mp4",
+      "sha256": "b0a6d5d052e3b00d93d6ef8dbf59f1f6a4de8536e4ecf242bc9d0b3224b56313",
+      "bytes": 7671961,
+      "url": "https://github.com/user-attachments/assets/89f7f588-5ab3-480e-a1f0-2197824ae7a4"
+    }
+  ]
+}

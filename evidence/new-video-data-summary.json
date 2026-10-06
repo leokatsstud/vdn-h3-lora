@@ -1,0 +1,22 @@
+{
+  "status": "prepared_NOT_trained",
+  "video_records": 513,
+  "source_videos": 174,
+  "captions_present": 513,
+  "caption_semantics_not_reviewed_for_every_clip": true,
+  "length_groups": {
+    "short39": 313,
+    "medium56to124": 182,
+    "long": 18
+  },
+  "geometry_fps": "original geometry, 24fps,17n+5; no resize/padding",
+  "sampling_probabilities": {
+    "short39": 0.5,
+    "medium56to124": 0.45,
+    "long": 0.05
+  },
+  "caption_dialogue_field_corrections": 28,
+  "remaining_dialogue_field_flags": 0,
+  "archive_SHA256": "3532d584a34d878f8e22434c4eb26770494be48fcafacc5826a75a01ab2d5cf9",
+  "archive_bytes": 4516704499
+}

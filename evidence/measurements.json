@@ -1,0 +1,126 @@
+{
+  "units": "seconds, GiB",
+  "not_total_billed_time": true,
+  "performance_checkpoint100": {
+    "no_optimizer_updates": true,
+    "noise_seed": 424242,
+    "base_u": 0.4,
+    "rows": [
+      {
+        "clip": "V145",
+        "frames": 124,
+        "config": "split+offload",
+        "seconds": 73.74073851492722,
+        "peak_GiB": 85.13
+      },
+      {
+        "clip": "V145",
+        "frames": 124,
+        "config": "block-only+offload",
+        "seconds": 61.13,
+        "peak_GiB": 92.23
+      },
+      {
+        "clip": "V114",
+        "frames": 345,
+        "config": "split+offload",
+        "seconds": 209.7020204559667,
+        "peak_GiB": 113.56
+      },
+      {
+        "clip": "V114",
+        "frames": 345,
+        "config": "block-only+offload",
+        "seconds": 185.22,
+        "peak_GiB": 133.01
+      }
+    ],
+    "parity": "reported loss parity and gradient relative L2=0; extra long case OOM"
+  },
+  "fresh_images": {
+    "updates": 5037,
+    "window_seconds": 3601.4,
+    "sources": 175,
+    "retained_images": 780
+  },
+  "video_continuation": {
+    "updates": 60,
+    "training_seconds": 7247.0394056,
+    "initial_image_step": 5000
+  },
+  "scoped_images": [
+    {
+      "recipe": "ff_only",
+      "updates": 2000,
+      "window_seconds": 1290.008249946055
+    },
+    {
+      "recipe": "ff_vo",
+      "updates": 2000,
+      "window_seconds": 1365.5127386630047
+    },
+    {
+      "recipe": "full_guarded",
+      "updates": 2000,
+      "window_seconds": 1431.0978979240172
+    }
+  ],
+  "fp8_runtime_diagnostics": {
+    "dense_fp8_images1000": {
+      "updates": 1000,
+      "median_step_seconds": 0.7635315140360035,
+      "update_seconds_sum": 793.4781899543013,
+      "peak_allocated_gib": 47.056313037872314,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "vdn_bf16_images500": {
+      "updates": 500,
+      "median_step_seconds": 0.6999541379627772,
+      "update_seconds_sum": 367.550934599014,
+      "peak_allocated_gib": 69.10655736923218,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "vdn_bf16_video_smoke": {
+      "updates": 3,
+      "median_step_seconds": 54.05494902806822,
+      "update_seconds_sum": 174.30712567805313,
+      "peak_allocated_gib": 92.44433879852295,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "vdn_fp8_images500": {
+      "updates": 500,
+      "median_step_seconds": 0.7792131419992074,
+      "update_seconds_sum": 413.3858454208821,
+      "peak_allocated_gib": 49.452688217163086,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "vdn_fp8_image_smoke": {
+      "updates": 3,
+      "median_step_seconds": 1.0159476860426366,
+      "update_seconds_sum": 4.6241271670442075,
+      "peak_allocated_gib": 49.45122051239014,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "vdn_fp8_video_smoke": {
+      "updates": 3,
+      "median_step_seconds": 49.5833220470231,
+      "update_seconds_sum": 159.07682063407265,
+      "peak_allocated_gib": 76.28765773773193,
+      "all_losses_gradients_finite": true,
+      "audio_supervised": false,
+      "references": 0
+    },
+    "images500_matched_inputs": true,
+    "video_smoke_matched_inputs": true
+  }
+}
