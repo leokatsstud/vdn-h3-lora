@@ -29,8 +29,9 @@ In E05–E10, each frame is presented once per shuffled epoch. E04 used a differ
 | E12 | Original H3 FP8, 780 images, up to 4000 presentations; inference on VDN | Style transfers; fast-motion degradation is substantially lower than with direct VDN training |
 | E13 | H3 and VDN in BF16; 701 images, 500 presentations each; shared QKV, guidance 4, no preservation | Initialization and the first 500 inputs matched. Direct VDN again degraded motion strongly; H3 transfer was less damaging |
 | E16 | Six new active scenes, two adapters after 4000 presentations; two extra merged-weight controls | The degradation difference remains. Both dance-rehearsal variants are photorealistic. Transfer retains style in the relay scene after merging |
+| E17 | Original H3 image4000 continued on 495 short clips; evaluation after 890 video presentations | About 140–150 clips/hour on one B200; matched VDN combat scenes degraded instead of improving |
 
-[E16 videos](../media/README.md) · [Recipes](10-recipes-and-controls.md) · [Transfer analysis](09-fp8-transfer-and-motion.md).
+[E16 videos](../media/generalization-20261006/README.md) · [E17 videos](../media/short-video-20261016/README.md) · [Recipes](10-recipes-and-controls.md) · [Transfer analysis](09-fp8-transfer-and-motion.md).
 
 ## Speed and memory
 

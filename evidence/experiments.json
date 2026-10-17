@@ -81,12 +81,24 @@
     "id": "E14",
     "status": "completed_data_preparation_only",
     "description": "513 clips from 174 videos; 28 dialogue-field corrections",
-    "conclusion": "Clips and captions prepared; training on this set has not been performed"
+    "conclusion": "513 clips and captions prepared; the495 clips at39\u2013124frames were subsequently used in E17"
   },
   {
     "id": "E16",
     "status": "completed_with_limitations",
     "description": "Six new active scenes; 12 separate-adapter outputs and two merged controls",
     "conclusion": "Direct VDN degrades motion more. N04 is photorealistic in both branches; transfer retains style on N03 after merging as well. The cause of disappearing style is unknown"
+  },
+  {
+    "id": "E17",
+    "status": "completed_with_regression",
+    "description": "Original H3 image4000 continued on 495 clips at 39\u2013124 frames, real audio, BF16 native Musubi; paired VDN evaluation at 890 new video updates",
+    "approximate_presentations_per_hour": [
+      140,
+      150
+    ],
+    "GPU": "B200",
+    "conclusion": "The two combat scenes deteriorated relative to image4000 instead of showing motion recovery. Guidance, preservation, audio supervision and training implementation changed concurrently; cause unresolved.",
+    "comparison": "media/short-video-20261016/README.md"
   }
 ]

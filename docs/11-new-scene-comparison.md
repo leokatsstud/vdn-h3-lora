@@ -27,7 +27,7 @@ Within each pair, prompt, seed and initial video/audio noise match. Adapter iden
 | N05 | Dock | Catching, carrying and lowering cargo |
 | N06 | Bicycle | Tool work, running, mounting and pedaling |
 
-[Videos and prompts](../media/README.md) · [Suite](../validation/generalization-20261006/suite.json) · [Metadata](../evidence/media-manifest.json).
+[Videos and prompts](../media/generalization-20261006/README.md) · [Suite](../validation/generalization-20261006/suite.json) · [Metadata](../evidence/media-manifest.json).
 
 ## Results
 

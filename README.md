@@ -10,6 +10,8 @@ Training on individual images learns the style quickly, but degrades motion in v
 
 Continuing the directly trained VDN checkpoint on 60 video presentations did not convincingly restore motion, or even show a hint of recovery. Style is also unstable on new scenes: some outputs are fully photorealistic even though the same adapter strongly stylizes other scenarios. The causes of both effects remain unknown.
 
+Continuing the original H3 image4000 LoRA on short videos also failed to improve motion: after **890 additional video presentations**, the matched combat scenes showed more degradation than the image-only checkpoint. Training on one B200 ran at approximately **140–150 short clips per hour**. [Experiment and paired videos](media/short-video-20261016/README.md).
+
 ## Contents
 
 - [Video comparisons](media/README.md).
@@ -19,12 +21,13 @@ Continuing the directly trained VDN checkpoint on 60 video presentations did not
 - [Recipe comparison with Musubi](docs/10-recipes-and-controls.md).
 - [FP8, LoRA application and motion degradation](docs/09-fp8-transfer-and-motion.md).
 - [Data and short clips](docs/07-data-plan.md).
+- [Short-video fine-tuning results](docs/12-short-video-finetuning.md).
 - [Open questions](docs/05-hypotheses.md).
 - [Code](research_code/README.md).
 
 ## Next direction
 
-Training original H3 on short videos in the target style, then transferring the adapter to VDN. We have prepared 513 captioned clips. On an H200, training on clips roughly 5–15 seconds long averages around 30 clips per hour, so we decided to test a dataset made mostly of very short clips: the majority are 39–124 frames, with a small portion of longer videos up to 15 seconds. This may speed up style learning. On 5–15-second clips, the first 60 presentations in the early video-only VDN LoRA run, without prior image training (that run later reached 181 updates), produced absolutely no change in photorealism apart from slight darkening across the shots. An effective number of video presentations is therefore probably above 1,000. A separate task is to find why direct VDN training causes stronger degradation and why style disappears on individual scenes. Initial image training on base H3 followed by video training might also give the best balance of quality and training speed, but that is only a hypothesis.
+Determine why video fine-tuning degraded the image-trained adapter. The next controls should separate changes in objective and audio supervision from clip duration, and check equivalence between the two training implementations.
 
 ## Project license
 

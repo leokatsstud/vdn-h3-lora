@@ -8,6 +8,7 @@ E01–E13 used an experimental trainer on OpenVDN/Diffusers. E13 reproduces the 
 | E10 | VDN BF16; 2000 frames each | FF-only; FF+V/O; full scope | Full scope uses video preservation 0.3 | No scope eliminated degradation |
 | E12 | Original H3 FP8; 780 frames, up to 4000 | Full scope; FP32 masters | Early guidance/preservation recipe | Style is retained on VDN; degradation is lower than with direct training |
 | E13 | H3 and VDN BF16; 701 frames, 500 each | Shared Q/K/V A; rank/alpha 32; 149,094,400 parameters | Guidance 4, threshold 0.15; video MSE without preservation; LR 1e-4, warmup 50 | The motion-quality difference remained |
+| E17 | Original H3 image4000 continued on 495 short videos; evaluation at 890 new video updates | Independent Q/K/V/O and FF; rank/alpha 32; retained image Adam states | Native Musubi BF16, guidance 4, threshold 0.15, real-audio weight 1, no separate preservation; LR 1e-4 | Paired VDN combat scenes degraded relative to image4000 |
 
 ## VDN adaptation versus recipe changes
 
@@ -35,3 +36,5 @@ Official third-party integration list: [MiniMax H3 training & LoRAs](https://git
 ## Related work
 
 [MotionDirector](https://arxiv.org/abs/2310.08465) studies separating appearance and motion; [VideoCrafter2](https://arxiv.org/abs/2401.09047) studies training video models on images and videos. Their recipes were not tested on VDN-H3 in this series.
+
+[Short-video fine-tuning details and comparison](12-short-video-finetuning.md).
